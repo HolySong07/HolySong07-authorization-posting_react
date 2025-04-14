@@ -1,1 +1,46 @@
-{"posts":[{"author":"Test 3","body":"Test 3","fullText":"Test 3","id":"0.4623191725401705"},{"author":"Test 2","body":"Test 2","fullText":"Test 2","id":"0.15631331472708543"},{"author":"Test 1","body":"Test 1","fullText":"Test 1","id":"0.06813712205554778"},{"author":"111112223444","body":"цукцк","fullText":"цукцукцу","id":"0.8188500206329812"},{"author":"Max 3","body":"Title 3","fullText":"full text","id":"0.48378596853646627"},{"body":"Description 1","author":"Petrenko Max","fullText":"full text","id":"0.26797778655098115"},{"body":"Description 2","author":"Max Petrenko 2","fullText":"full text","id":"post-1"}]}
+{
+	"posts": [
+		{
+			"author": "Petrenko Max",
+			"body": "Preview text",
+			"fullText": "Test 3",
+			"id": "0.4623191725401705"
+		},
+		{
+			"author": "Petrenko Max",
+			"body": "Preview text",
+			"fullText": "full text",
+			"id": "0.15631331472708543"
+		},
+		{
+			"author": "Petrenko Max",
+			"body": "Preview text",
+			"fullText": "Lorem Ipsum is simply dummy text of the",
+			"id": "0.06813712205554778"
+		},
+		{
+			"author": "Petrenko Max",
+			"body": "Preview text",
+			"fullText": "full text",
+			"id": "0.8188500206329812"
+		},
+		{
+			"author": "Petrenko Max",
+			"body": "Title 3",
+			"fullText": "Lorem Ipsum is simply dummy text of the",
+			"id": "0.48378596853646627"
+		},
+		{
+			"body": "Description 1",
+			"author": "Petrenko Max",
+			"fullText": "full text",
+			"id": "0.26797778655098115"
+		},
+		{
+			"body": "Description 2",
+			"author": "Max Petrenko 2",
+			"fullText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+			"id": "post-1"
+		}
+	]
+}

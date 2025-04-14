@@ -8,15 +8,13 @@ import NewPost, { action as newPostAction } from './routes/NewPost';
 import PostDetails, { loader as postDetailsLoader } from './routes/PostDetails';
 import RootLayout from './routes/RootLayout';
 import './index.css';
-import { checkAuthLoader, tokenLoader } from './util/auth';
+import { tokenLoader } from './util/auth';
 
 import Login, {action as authAction} from './components/Login';
-
 
 import {
 	QueryClient,
 	QueryClientProvider,
-	useQuery,
   } from '@tanstack/react-query'
 
 export const queryClient = new QueryClient();
@@ -31,7 +29,6 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Posts />,
-       	//loader: postsLoader,
         children: [
           { path: '/create-post', 
 			element: <NewPost />, 
@@ -59,9 +56,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 	  <QueryClientProvider client={queryClient}>
-
     	<RouterProvider router={router} />
-
 	</QueryClientProvider>
   </React.StrictMode>
 );

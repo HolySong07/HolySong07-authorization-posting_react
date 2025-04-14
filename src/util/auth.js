@@ -8,8 +8,6 @@ export function getTokenDuration() {
 	return duration;
   }
 
-
-  
   export function getAuthToken() {
 	const token = localStorage.getItem('token');
   
@@ -32,11 +30,8 @@ export function getTokenDuration() {
   }
   
   export function checkAuthLoader() {
-
 	const token = getAuthToken();
-
-	//console.log(token);
-  
+ 
 	if (!token) {
 	  return redirect('/auth');
 	}
