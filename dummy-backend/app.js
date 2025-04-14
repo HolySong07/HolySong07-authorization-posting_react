@@ -8,11 +8,8 @@ const app = express();
 app.use(bodyParser.json());
 
 const cors = require('cors');
-app.use(cors()); // разрешает все домены по умолчанию
+app.use(cors()); 
 
-
-
-// вставляю новое
 const authRoutes = require('./routes/auth');
 
   app.use(authRoutes);
@@ -22,26 +19,6 @@ const authRoutes = require('./routes/auth');
 	const message = error.message || 'Something went wrong.';
 	res.status(status).json({ message: message });
   });
-
-// вставляю новое
-
-
-
-
-
-
-
-
-
-// изменил эту функцию
-/* app.use((req, res, next) => {
-  
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
-  next();
-}); */
-
 
 
 app.get('/posts', async (req, res) => {
