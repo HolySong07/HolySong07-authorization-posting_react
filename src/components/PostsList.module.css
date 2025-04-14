@@ -1,0 +1,10 @@
+.posts {
+	list-style: none;
+	max-width: 50rem;
+	margin: 2rem 10%;
+	padding: 1rem 0;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(3, 30%);
+	justify-content: center;
+  }
