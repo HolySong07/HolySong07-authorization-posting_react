@@ -20,6 +20,9 @@ function NewPost() {
           <label htmlFor="fullText">Your Full text</label>
           <textarea type="text" id="fullText" rows={3} name="fullText" required />
         </p>
+			<input type="hidden" name="good" value="0"/>
+			<input type="hidden" name="bad" value="0"/>
+			<input type="hidden" name="fire" value="0"/>
         
         <p className={classes.actions}>
           <Link to=".." type="button">

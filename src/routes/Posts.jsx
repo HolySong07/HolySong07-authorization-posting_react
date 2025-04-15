@@ -3,6 +3,7 @@ import classes from '../components/PostsList.module.css';
 import {useQuery} from '@tanstack/react-query'
 
 import Post from '../components/Post';
+import Sidedebar from '../components/Sidebar';
 
 function Posts() {
 	const { isPending, error, data, isFetching } = useQuery({
@@ -15,13 +16,15 @@ function Posts() {
   return (
     <>
       <Outlet />
-      <main>
+      <main className={classes.main}>
 		<ul className={classes.posts}>
 	  		{data.map((post) => (
             	<Post key={post.id} id={post.id} author={post.author} body={post.body} />
         	))}
 		</ul>
-        
+		<div>
+			<Sidedebar posts={data}/>
+		</div>
       </main>
     </>
   );

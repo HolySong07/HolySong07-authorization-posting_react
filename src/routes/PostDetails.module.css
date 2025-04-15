@@ -2,6 +2,22 @@
 	padding: 1rem;
 	width: 30rem;
   }
+
+  .vote {
+	display: flex;
+	justify-content: space-between;
+  }
+
+  img {
+	width: 16px;
+	height: 16px;
+	margin-left: 6px;
+  }
+
+  span {
+	display: flex;
+	align-items: center;
+  }
   
   .author {
 	font-size: 0.8rem;

@@ -10,53 +10,50 @@ import RootLayout from './routes/RootLayout';
 import './index.css';
 import { tokenLoader } from './util/auth';
 
-import Login, {action as authAction} from './components/Login';
 
-import {
-	QueryClient,
-	QueryClientProvider,
-  } from '@tanstack/react-query'
 
+import Login, { action as authAction } from './components/Login';
+
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 export const queryClient = new QueryClient();
 
+import { Provider } from 'react-redux';
+import store from './store/index.jsx';
+
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <RootLayout />,
-	id: 'root',
-	loader: tokenLoader,
-    children: [
-      {
-        path: '/',
-        element: <Posts />,
-        children: [
-          { path: '/create-post', 
-			element: <NewPost />, 
-			action: newPostAction 
+	{
+		path: '/',
+		element: <RootLayout />,
+		id: 'root',
+		loader: tokenLoader,
+		children: [
+			{
+				path: '/',
+				element: <Posts />,
+				children: [
+					{ path: '/create-post', element: <NewPost />, action: newPostAction },
+					{ path: '/:postId', element: <PostDetails />, loader: postDetailsLoader },
+				],
 			},
-          { path: '/:postId', 
-			element: <PostDetails />, 
-			loader: postDetailsLoader 
-		}
-        ],
-      },
-	  {
-        path: '/signup',
-        element: <Login />,
-		action: authAction,
-      },
-      {
-        path: 'logout',
-        action: logoutAction,
-      },
-    ],
-  },
+			{
+				path: '/signup',
+				element: <Login />,
+				action: authAction,
+			},
+			{
+				path: 'logout',
+				action: logoutAction,
+			},
+		],
+	},
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-	  <QueryClientProvider client={queryClient}>
-    	<RouterProvider router={router} />
-	</QueryClientProvider>
-  </React.StrictMode>
+	<React.StrictMode>
+		<QueryClientProvider client={queryClient}>
+			<Provider store={store}>
+				<RouterProvider router={router} />
+			</Provider>
+		</QueryClientProvider>
+	</React.StrictMode>
 );

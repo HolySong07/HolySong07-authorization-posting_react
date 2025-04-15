@@ -1,0 +1,15 @@
+	.counter {
+		display: flex;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.wrapper {
+		width: 320px;
+	}
+
+	span {
+		padding: 0 10px;
+	}
+	
