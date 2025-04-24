@@ -1,0 +1,21 @@
+.list {
+	list-style: none;
+	text-align: left;
+}
+
+.container {
+	margin: 2rem 10%;
+	text-align: left;
+
+	input,
+	textarea {
+		width: 300px;
+	}
+
+	.delete {
+		background: no-repeat;
+		border: none;
+		color: red;
+		cursor: pointer;
+	}
+}

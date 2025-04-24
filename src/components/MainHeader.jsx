@@ -16,7 +16,12 @@ function MainHeader() {
 					Best news
 				</h1>
 			</Link>
-
+			<div className={classes.menu}>
+				<Link to="/graphql">
+					<span>Graphql</span>
+				</Link>
+			</div>
+			
 			{!token && (
 				<p>
 					<Link to="/signup" className={classes.login}>

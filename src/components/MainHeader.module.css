@@ -11,6 +11,13 @@
   a {
 	text-decoration: none;
   }
+
+  .menu {
+	span {
+		color: white;
+		text-decoration: underline;
+	}
+  }
   
   .logo {
 	font-size: 2rem;

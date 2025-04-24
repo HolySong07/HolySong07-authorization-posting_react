@@ -1,0 +1,10 @@
+{
+	"posts": [
+	  { "id": 1, "title": "Hello", "body": "GraphQL first msg" },
+	  { "id": 2, "title": "Good bye", "body": "GraphQL second msg" }
+	],
+	"users": [
+	  { "id": 1, "name": "Max" },
+	  { "id": 2, "name": "Natali" }
+	]
+  }

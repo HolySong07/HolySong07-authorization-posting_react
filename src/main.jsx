@@ -9,8 +9,13 @@ import PostDetails, { loader as postDetailsLoader } from './routes/PostDetails';
 import RootLayout from './routes/RootLayout';
 import './index.css';
 import { tokenLoader } from './util/auth';
+import Mongodb from './routes/Mongodb.jsx';
+import Graphql from './routes/Graphql.jsx';
 
-
+// appolo + graphQL
+import { ApolloProvider } from '@apollo/client';
+import client from '../apolloClient.js';
+// appolo + graphQL
 
 import Login, { action as authAction } from './components/Login';
 
@@ -44,6 +49,14 @@ const router = createBrowserRouter([
 				path: 'logout',
 				action: logoutAction,
 			},
+			{
+				path: '/graphql',
+				element: <Graphql />,
+			},
+			{
+				path: '/mongodb',
+				element: <Mongodb />,
+			},
 		],
 	},
 ]);
@@ -52,7 +65,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
 		<QueryClientProvider client={queryClient}>
 			<Provider store={store}>
-				<RouterProvider router={router} />
+				<ApolloProvider client={client}>	
+					<RouterProvider router={router} />
+				</ApolloProvider>	
 			</Provider>
 		</QueryClientProvider>
 	</React.StrictMode>

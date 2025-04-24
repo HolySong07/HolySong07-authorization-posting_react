@@ -4,6 +4,9 @@ Redax is used in the right sidebar
 
 To run the project, you need to run npm install in the root of the project and the backend folder
 1) run the backend server "npm start"
-2) run rontend - "npm run dev"
+2) run frontend - "npm run dev";
+3) run "npm run graphql-server" - for graphql-server
+data.json - DB in root folder
+apolloClient.js  - file config in root folder
 
 To enter, please register
