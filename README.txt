@@ -7,6 +7,8 @@ To run the project, you need to run npm install in the root of the project and t
 2) run frontend - "npm run dev";
 3) run "npm run graphql-server" - for graphql-server
 data.json - DB in root folder
-apolloClient.js  - file config in root folder
+apolloClient.js  - file config, in root folder
+
+4) On TAB /mongodb. I connected MongoDB data base.
 
 To enter, please register

@@ -8,14 +8,18 @@
 	border-bottom: 2px solid #ece1fa;
   }
 
+
+
   a {
 	text-decoration: none;
   }
 
   .menu {
+	display: flex;
+
 	span {
 		color: white;
-		text-decoration: underline;
+		
 	}
   }
   
@@ -55,4 +59,10 @@
   
   .button:hover {
 	background-color: #777778;
+  }
+
+  .active {
+	span {
+		text-decoration: underline;
+	}
   }

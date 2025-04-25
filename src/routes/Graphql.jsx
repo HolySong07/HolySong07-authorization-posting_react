@@ -100,8 +100,8 @@ export default function Graphql() {
 	};
 	// for remove post
 
-	if (loading) return <p>Загрузка...</p>;
-	if (error) return <p>Ошибка: {error.message}</p>;
+	if (loading) return <p>loading data...</p>;
+	if (error) return <p>Error: {error.message}. Please start the graphQL server</p>;
 
 	let contentForm = 'The form is disabled now';
 

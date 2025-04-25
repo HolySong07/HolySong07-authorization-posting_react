@@ -10,6 +10,31 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors()); 
 
+// Connect to MongoDB
+const mongoose = require('mongoose');
+
+mongoose.connect(
+  'mongodb+srv://holysong87:55555@cluster0.fxtdw.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0',
+  { useNewUrlParser: true, useUnifiedTopology: true }
+)
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.error('MongoDB connection error:', err));
+
+// Meetup model
+const Meetup = require('./models/Meetup');
+
+// way
+app.get('/meetups', async (req, res) => {
+  try {
+    const meetups = await Meetup.find();
+    res.json(meetups);
+  } catch (error) {
+    res.status(500).json({ error: 'Ошибка при получении митапов' });
+  }
+});
+
+// MongoDB
+
 const authRoutes = require('./routes/auth');
 
   app.use(authRoutes);
@@ -48,4 +73,6 @@ app.post('/posts', async (req, res) => {
   res.status(201).json({ message: 'Stored new post.', post: newPost });
 });
 
-app.listen(8080);
+const PORT = 8080;
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+

@@ -1,4 +1,4 @@
-import { Link, Form, useRouteLoaderData } from 'react-router-dom';
+import { Link, Form, NavLink,  useRouteLoaderData } from 'react-router-dom';
 import { MdPostAdd, MdMessage } from 'react-icons/md';
 
 import { checkAuthLoader, tokenLoader } from '../util/auth';
@@ -17,9 +17,12 @@ function MainHeader() {
 				</h1>
 			</Link>
 			<div className={classes.menu}>
-				<Link to="/graphql">
+				<NavLink to="/graphql" className={({ isActive }) => isActive ? classes.active : undefined }>
 					<span>Graphql</span>
-				</Link>
+				</NavLink>
+				<NavLink to="/mongodb"  className={({ isActive }) => isActive ? classes.active : undefined }>
+					<span>MongoDB</span>
+				</NavLink>
 			</div>
 			
 			{!token && (
